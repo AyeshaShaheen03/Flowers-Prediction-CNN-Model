@@ -1,4 +1,5 @@
-import app as st
+# import app as st
+import streamlit as st
 import numpy as np
 import os
 import requests
