@@ -11,8 +11,8 @@ from tensorflow.keras.preprocessing import image
 # Load model
 # model = load_model("model.h5")
 # class_names = ["buildings", "forest", "glacier", "mountain", "sea", "street"]
-MODEL_URL = "https://huggingface.co/Ayesha0303/machine-learning/resolve/main/model.h5"
-MODEL_PATH = "model.h5"
+MODEL_URL = "https://huggingface.co/Ayesha0303/Machine-Learning/resolve/main/model.keras"
+MODEL_PATH = "model.keras"
 
 # Download model if not present
 @st.cache_resource
