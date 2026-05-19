@@ -14,14 +14,18 @@ MODEL_URL = "https://huggingface.co/Ayesha0303/machine-learning/resolve/main/mod
 MODEL_PATH = "model.h5"
 
 # Download model if not present
-if not os.path.exists(MODEL_PATH):
-    r = requests.get(MODEL_URL)
+@st.cache_resource
+def load_my_model():
 
-    with open(MODEL_PATH, "wb") as f:
-        f.write(r.content)
+    if not os.path.exists(MODEL_PATH):
+        r = requests.get(MODEL_URL)
 
-# Load model
-model = load_model(MODEL_PATH)
+        with open(MODEL_PATH, "wb") as f:
+            f.write(r.content)
+
+    return load_model(MODEL_PATH)
+
+model = load_my_model()
 
 class_names = ["buildings", "forest", "glacier", "mountain", "sea", "street"]
 
